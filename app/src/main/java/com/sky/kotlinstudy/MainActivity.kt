@@ -7,10 +7,15 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import com.blankj.utilcode.util.LogUtils
 import com.sky.kotlinstudy.constructor.Student
 import com.sky.kotlinstudy.constructor.Teacher
+import com.sky.kotlinstudy.network.Api
+import com.sky.kotlinstudy.network.bean.BaseResponse
+import com.sky.kotlinstudy.network.bean.TestBody
 import com.sky.kotlinstudy.ui.main.MainFragment
 import kotlinx.coroutines.*
+import okhttp3.Call
 import java.io.InputStream
 import java.net.HttpURLConnection
 import java.net.URL
@@ -44,6 +49,13 @@ class MainActivity : AppCompatActivity() {
         val d = method2(2) //将函数返回值赋值给变量
         b { method2(3) }
         xieChen()
+        CoroutineScope(Dispatchers.Main).launch(Dispatchers.Main) {
+            Log.i("数据请求", "当前线程名1：->" + Thread.currentThread().name)
+            val resp = withContext(Dispatchers.IO) {
+                Api.test().execute().body()
+            }
+            LogUtils.i(resp?.data)
+        }
     }
 
     fun viewMethod(view: View?) {
@@ -205,7 +217,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     //协程的使用方式
-    fun xieChen(){
+    fun xieChen() {
         //方式1 线程阻塞
 //        runBlocking {
 //
@@ -219,23 +231,23 @@ class MainActivity : AppCompatActivity() {
         //方式3
         // 方法三，自行通过 CoroutineContext 创建一个 CoroutineScope 对象
 //                                    👇 需要一个类型为 CoroutineContext 的参数
-        var iv:ImageView =findViewById(R.id.iv)
+        var iv: ImageView = findViewById(R.id.iv)
         CoroutineScope(Dispatchers.Main).launch(Dispatchers.Main) {
-            Log.i("111","当前线程名1：->"+Thread.currentThread().name)
-          val bitmap=  withContext(Dispatchers.IO){
-              Log.i("111","当前线程名2：->"+Thread.currentThread().name)
-              getImage("https://d47jbcq60tnr6.cloudfront.net/2020112/10841-c19x3h.dkzt6.jpg")
+            Log.i("111", "当前线程名1：->" + Thread.currentThread().name)
+            val bitmap = withContext(Dispatchers.IO) {
+                Log.i("111", "当前线程名2：->" + Thread.currentThread().name)
+                getImage("https://d47jbcq60tnr6.cloudfront.net/2020112/10841-c19x3h.dkzt6.jpg")
             }
             iv.setImageBitmap(bitmap)
         }
     }
 
-    fun getImage(url :String ):Bitmap{
-        val  urlParam= URL(url)
-        val openOption =urlParam.openConnection() as HttpURLConnection
-        openOption.requestMethod="GET"
+    fun getImage(url: String): Bitmap {
+        val urlParam = URL(url)
+        val openOption = urlParam.openConnection() as HttpURLConnection
+        openOption.requestMethod = "GET"
         openOption.connect()
-        val inputStream =openOption.inputStream
+        val inputStream = openOption.inputStream
         return BitmapFactory.decodeStream(inputStream)
     }
 }
