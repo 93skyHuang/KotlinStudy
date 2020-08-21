@@ -1,4 +1,4 @@
-package com.sky.kotlinstudy.constructor
+package com.sky.kotlinstudy.test.constructor
 
 /**
  *created skyHuang
@@ -13,7 +13,8 @@ class Teacher private constructor(val name: String) {
     }
 
     companion object {
-        private val teacher: Teacher = Teacher("222")
+        private val teacher: Teacher =
+            Teacher("222")
 
         fun getTeacher(): Teacher {
           return teacher

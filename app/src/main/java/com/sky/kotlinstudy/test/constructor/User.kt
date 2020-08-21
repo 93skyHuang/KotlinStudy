@@ -1,4 +1,4 @@
-package com.sky.kotlinstudy.constructor
+package com.sky.kotlinstudy.test.constructor
 
 /**
  *created skyHuang

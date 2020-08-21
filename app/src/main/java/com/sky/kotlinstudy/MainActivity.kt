@@ -8,8 +8,8 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import com.blankj.utilcode.util.LogUtils
-import com.sky.kotlinstudy.constructor.Student
-import com.sky.kotlinstudy.constructor.Teacher
+import com.sky.kotlinstudy.test.constructor.Student
+import com.sky.kotlinstudy.test.constructor.Teacher
 import com.sky.kotlinstudy.network.Api
 import com.sky.kotlinstudy.network.bean.BaseResponse
 import com.sky.kotlinstudy.network.bean.TestBody
@@ -24,7 +24,8 @@ import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
-    val student: Student = Student("sky", 27, 3)
+    val student: Student =
+        Student("sky", 27, 3)
     val intArr = intArrayOf(21, 40, 11, 33, 78)
 
     override fun onCreate(savedInstanceState: Bundle?) {

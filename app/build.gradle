@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.sky.kotlinstudy"
@@ -20,6 +20,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    dataBinding {
+        enabled = true
     }
 }
 
@@ -40,10 +44,17 @@ dependencies {
     //开源工具类 可以使用的类 https://github.com/Blankj/AndroidUtilCode/blob/master/lib/utilcode/README-CN.md
     implementation 'com.blankj:utilcodex:1.28.1'
 
-
     //network
     implementation 'com.squareup.okhttp3:okhttp:3.12.8'
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+
+    //MVVM
+    implementation 'com.android.databinding:library:4.0.1'
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation "android.arch.lifecycle:viewmodel:1.1.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0-alpha07"
+    implementation "android.arch.lifecycle:livedata:1.1.1"
+
 }

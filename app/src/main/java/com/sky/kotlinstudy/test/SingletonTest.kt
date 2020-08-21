@@ -1,4 +1,4 @@
-package com.sky.kotlinstudy
+package com.sky.kotlinstudy.test
 
 /**
  *created skyHuang
@@ -20,7 +20,8 @@ object SingletonTest {
         fun interfaceMethod()
     }
 
-    object C : A(), B {
+    object C : A(),
+        B {
         override fun interfaceMethod() {
             TODO("Not yet implemented")
         }

@@ -1,4 +1,4 @@
-package com.sky.kotlinstudy
+package com.sky.kotlinstudy.test
 
 /**
  *created skyHuang

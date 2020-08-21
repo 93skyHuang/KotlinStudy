@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <!--Appbar背景色-->
+    <color name="colorPrimary">#FFFFFF</color>
+    <!--状态栏颜色-->
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <!--控制各个控件被选中时的颜色-->
+    <color name="colorAccent">#007AFF</color>
+    <!--ToolBar上的Title颜色-->
+    <color name="textColorPrimary">#007AFF</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="mainColor">#007AFF</color>
+    <color name="windowBackground">#EFEFF4</color>
+    <color name="divider_line_color">#4a3C3C43</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+
+    <color name="big_title_color">#65009688</color>
+
+    <color name="btnDisableColor">#33007AFF</color>
+    <color name="btnPressColor">#CC007AFF</color>
 </resources>
