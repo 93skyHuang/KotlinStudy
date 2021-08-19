@@ -2,6 +2,9 @@
 <resources>
     <dimen name="edit_height">50dp</dimen>
     <dimen name="normal_btn_height">50dp</dimen>
+    <dimen name="item_height">50dp</dimen>
+    <dimen name="divider_line_height">1dp</dimen>
+    <dimen name="space_margin_rl">16dp</dimen>
 
     <dimen name="text_sp_12">12sp</dimen>
     <dimen name="text_sp_14">14sp</dimen>
@@ -10,4 +13,6 @@
     <dimen name="text_sp_24">24sp</dimen>
     <dimen name="text_sp_28">28sp</dimen>
     <dimen name="text_sp_30">30sp</dimen>
+
+    <dimen name="title_sp_26">26sp</dimen>
 </resources>

@@ -1,10 +1,10 @@
 package com.sky.kotlinstudy.network.interceptor
 
-import com.blankj.utilcode.util.LogUtils
 import okhttp3.Interceptor
 import okhttp3.Response
 import okhttp3.ResponseBody
 import okio.Buffer
+import timber.log.Timber
 import java.io.IOException
 import java.nio.charset.StandardCharsets
 
@@ -32,8 +32,7 @@ class LogInterceptor : Interceptor {
             request.headers(),
             reqBody
         )
-        print(req)
-        LogUtils.v(req)
+        Timber.v(req)
         val t1 = System.nanoTime()
         val response = chain.proceed(request)
         val t2 = System.nanoTime()
@@ -47,8 +46,7 @@ class LogInterceptor : Interceptor {
             response.headers(),
             content
         )
-        print(res)
-        LogUtils.i(res)
+        Timber.i(res)
         return response.newBuilder()
             .body(ResponseBody.create(mediaType, content))
             .build()

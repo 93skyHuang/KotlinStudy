@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">KotlinStudy</string>
     <string name="login_title">欢迎来到wanAndroid</string>
+
+    <string name="mine">我的</string>
+    <string name="login_tips">点击进行登录</string>
+    <string name="my_integral">我的积分</string>
+    <string name="my_collect">我的收藏</string>
+    <string name="history">浏览历史</string>
+    <string name="integral_sort">积分排名</string>
+    <string name="system_setting">系统设置</string>
 </resources>

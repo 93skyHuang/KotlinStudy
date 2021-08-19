@@ -1,18 +1,19 @@
 package com.sky.kotlinstudy
 
 import android.app.Application
+import timber.log.Timber
 
 /**
  *created skyHuang
  * data 2020/8/21
  **/
-class App : Application() {
-    companion object {
-        lateinit var instance: App
-    }
 
+lateinit var skyApplication: SkyApp
+
+class SkyApp : Application() {
     override fun onCreate() {
         super.onCreate()
-        instance = this
+        skyApplication = this
+        Timber.plant(Timber.DebugTree())
     }
 }

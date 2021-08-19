@@ -3,6 +3,7 @@ package com.sky.kotlinstudy.base
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +17,7 @@ import com.sky.kotlinstudy.common.navNextPage
  * data 2020/8/19
  **/
 abstract class BaseFragment : Fragment() {
-
+    private  val TAG = "BaseFragment"
     lateinit var mActivity: AppCompatActivity
 
     //R.layout.id

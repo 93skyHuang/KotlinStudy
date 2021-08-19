@@ -11,9 +11,9 @@ import com.sky.kotlinstudy.ext.getVmClazz
  * data 2020/8/20
  **/
 abstract class BaseVMFragment<VM : BaseViewModel> : BaseFragment() {
-
+    private val TAG = "BaseVMFragment"
     //ViewModel
-    protected val viewModel: VM by lazy { initViewModel() }
+    protected val mViewModel: VM by lazy { initViewModel() }
 
     open fun initViewModel(): VM {
         return ViewModelProviders.of(this).get(getVmClazz(this))
@@ -22,6 +22,6 @@ abstract class BaseVMFragment<VM : BaseViewModel> : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.initState()
+        mViewModel.initState()
     }
 }

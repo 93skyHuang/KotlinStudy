@@ -2,9 +2,10 @@ package com.sky.kotlinstudy.network
 
 import com.sky.kotlinstudy.network.interceptor.HeaderInterceptor
 import com.sky.kotlinstudy.network.interceptor.LogInterceptor
+import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
 /**
@@ -13,13 +14,13 @@ import java.util.concurrent.TimeUnit
  * 接口请求
  **/
 
-val BASE_RUL = "https://www.wanandroid.com"
+val BASE_URL = "https://www.wanandroid.com"
 
-val Api: ApiService by lazy {
-    Retrofit.Builder()
-        .baseUrl(BASE_RUL)
+object NetworkApi {
+    val API = Retrofit.Builder()
+        .baseUrl(BASE_URL)
         .client(MyOkHttpClient)
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(MoshiConverterFactory.create())
         .build()
         .create(ApiService::class.java)
 }
